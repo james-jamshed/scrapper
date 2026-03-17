@@ -7,7 +7,7 @@ import { parse } from 'csv-parse/sync';
 const INPUT_WEBHOOK_URL =
   'https://s1.boomerangserver.co.in/webhook/private-profiles-scraper';
 const STATS_WEBHOOK_URL =
-  ' https://s1.boomerangserver.co.in/webhook/private-profile-scraper-stats';
+  'https://s1.boomerangserver.co.in/webhook/private-profile-scraper-stats';
 
 // ─── Helper: sleep ────────────────────────────────────────────────────────────
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
