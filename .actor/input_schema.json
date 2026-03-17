@@ -1,0 +1,73 @@
+{
+  "title": "LinkedIn Profile Scraper",
+  "description": "Scrape LinkedIn profiles and send to processing webhook",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "customer_name": {
+      "title": "Customer Name",
+      "type": "string",
+      "description": "Customer or project name. A separate Google Drive folder will be created for this customer.",
+      "editor": "textfield"
+    },
+    "customer_email": {
+      "title": "Customer Email",
+      "type": "string",
+      "description": "Customer email address to send the completed report to.",
+      "editor": "textfield"
+    },
+    "service_name": {
+      "title": "Service Name",
+      "type": "string",
+      "description": "Name of the service being requested.",
+      "editor": "textfield",
+      "default": "linkedin-profile-scraper"
+    },
+    "service_request_tag_name": {
+      "title": "Service Request Tag",
+      "type": "string",
+      "description": "Tag or category for this request.",
+      "editor": "textfield",
+      "default": "linkedin-scrape"
+    },
+    "linkedin_urls": {
+      "title": "LinkedIn Profile URLs",
+      "type": "array",
+      "description": "Add LinkedIn profile URLs one by one, or use the bulk upload option below.",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      },
+      "placeholderValue": "https://www.linkedin.com/in/username/"
+    },
+    "bulk_upload_csv": {
+      "title": "Bulk Upload (CSV/Sheet URL)",
+      "type": "string",
+      "description": "Optional: Paste a Google Sheet URL or CSV download link containing LinkedIn URLs in the first column.",
+      "editor": "textfield"
+    },
+    "google_service_account_json": {
+      "title": "Google Service Account JSON",
+      "type": "string",
+      "description": "Paste your Google Service Account JSON key here to enable Google Drive saving.",
+      "editor": "textarea",
+      "isSecret": true
+    },
+    "drive_folder_id": {
+      "title": "Google Drive Root Folder ID",
+      "type": "string",
+      "description": "The ID of the root Google Drive folder where customer subfolders will be created.",
+      "editor": "textfield"
+    },
+    "poll_interval_minutes": {
+      "title": "Poll Interval (minutes)",
+      "type": "integer",
+      "description": "How often to check the stats webhook for completion status.",
+      "editor": "number",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 10
+    }
+  },
+  "required": ["customer_name", "customer_email", "service_name", "service_request_tag_name"]
+}
