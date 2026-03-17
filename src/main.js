@@ -5,9 +5,9 @@ import { parse } from 'csv-parse/sync';
 
 // ─── Webhook URLs ─────────────────────────────────────────────────────────────
 const INPUT_WEBHOOK_URL =
-  'https://n8n-main.chitlangia.co/webhook/private-profiles-scraper-request';
+  'https://s1.boomerangserver.co.in/webhook/private-profiles-scraper';
 const STATS_WEBHOOK_URL =
-  'https://n8n-main.chitlangia.co/webhook/private-profile-export-request-stats';
+  ' https://s1.boomerangserver.co.in/webhook/private-profile-scraper-stats';
 
 // ─── Helper: sleep ────────────────────────────────────────────────────────────
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
